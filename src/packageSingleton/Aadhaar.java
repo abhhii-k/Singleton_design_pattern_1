@@ -6,15 +6,15 @@ public class Aadhaar {
 	
 	public final long ano;
 	
-	private static Aadhaar ar;
+	private static Aadhaar ar;				//private static non-primitive Aadhaar datatype
 	
-	private Aadhaar(long aadhaarNo) {
+	private Aadhaar(long aadhaarNo) {                  //Private constructor
 		Aadhaar.adhaarNo = aadhaarNo;
 		ano = Aadhaar.adhaarNo;
 		System.out.println("Adhaarno created");
 	}
 	
-	public static Aadhaar createObj(long no) {
+	public static Aadhaar createObj(long no) {      //static Function for object creation
 		if(ar==null) {
 			ar = new Aadhaar(no);
 		}
@@ -22,7 +22,7 @@ public class Aadhaar {
 			System.out.println("Aadhaar already created");
 			System.out.println("Your Aadhaar No: "+Aadhaar.adhaarNo);
 		}
-		return ar;
+		return ar;                          //returning Object reference
 	}
 
 }
