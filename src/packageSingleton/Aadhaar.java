@@ -2,21 +2,25 @@ package packageSingleton;
 
 public class Aadhaar {
 	
-	private int adhaarNo;
+	private static long adhaarNo;
 	
-	private Aadhaar ar;
+	public final long ano;
 	
-	private Aadhaar(int adhaarNo) {
-		this.adhaarNo = adhaarNo;
+	private static Aadhaar ar;
+	
+	private Aadhaar(long aadhaarNo) {
+		Aadhaar.adhaarNo = aadhaarNo;
+		ano = Aadhaar.adhaarNo;
+		System.out.println("Adhaarno created");
 	}
 	
-	public Aadhaar createObj(int no) {
+	public static Aadhaar createObj(long no) {
 		if(ar==null) {
 			ar = new Aadhaar(no);
 		}
 		else {
 			System.out.println("Aadhaar already created");
-			System.out.println("Your Aadhaar No: "+this.adhaarNo);
+			System.out.println("Your Aadhaar No: "+Aadhaar.adhaarNo);
 		}
 		return ar;
 	}
